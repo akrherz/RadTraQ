@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_source_auto_examples_plot_dual_doppler_lobes.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -32,7 +32,7 @@ code-block:: python
     ax.add_image(tiler, 8)
     ax.coastlines('10m')
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-36
+.. GENERATED FROM PYTHON SOURCE LINES 17-38
 
 
 
@@ -48,12 +48,14 @@ code-block:: python
 .. code-block:: Python
 
 
-
-    import radtraq
     import matplotlib.pyplot as plt
 
-    d = {'Cullman': {'lat': 34.26274649951493, 'lon': -86.85874523934974},
-         'Courtland': {'lat': 34.658302981847655, 'lon': -87.34389529761859}}
+    import radtraq
+
+    d = {
+        'Cullman': {'lat': 34.26274649951493, 'lon': -86.85874523934974},
+        'Courtland': {'lat': 34.658302981847655, 'lon': -87.34389529761859},
+    }
 
     data = radtraq.utils.calculate_dual_dop_lobes(d)
 

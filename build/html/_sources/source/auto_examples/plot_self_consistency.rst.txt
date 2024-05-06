@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_source_auto_examples_plot_self_consistency.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -23,7 +23,7 @@ Self-Consistency Plot
 
 This example shows how to create a self-consistency plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-28
+.. GENERATED FROM PYTHON SOURCE LINES 8-37
 
 
 
@@ -33,38 +33,36 @@ This example shows how to create a self-consistency plot
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/runner/work/RadTraQ/RadTraQ/examples/plot_self_consistency.py:14: DeprecationWarning: act.io.armfiles.read_netcdf will be replaced in version 2.0.0 by act.io.arm.read_arm_netcdf()
-      ds = read_netcdf(radtraq.tests.sample_files.EXAMPLE_CSAPR)
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
 
-    import radtraq
-    from act.io.armfiles import read_netcdf
     import matplotlib.pyplot as plt
+    from act.io.arm import read_arm_netcdf
+    from open_radar_data import DATASETS
+
+    import radtraq
 
     # Read in example data
-    ds = read_netcdf(radtraq.tests.sample_files.EXAMPLE_CSAPR)
+    filename = DATASETS.fetch('csapr.nc')
+    ds = read_arm_netcdf(filename)
 
     # Set thresholds of RhoHv > 0.99
     thresh = {'copol_correlation_coeff': 0.99}
 
     # Set up dictionary of variables to plot
-    var_dict = {'differential_reflectivity': {'variable': 'reflectivity', 'bin_width': [1, 0.25], 'linreg': True},
-                'specific_differential_phase': {'variable': 'reflectivity'},
-                'differential_phase': {'variable': 'reflectivity', 'bin_width': [1, 2.0]},
-                'mean_doppler_velocity': {'variable': 'reflectivity', 'bin_width': [1, 0.5]}}
+    var_dict = {
+        'differential_reflectivity': {
+            'variable': 'reflectivity',
+            'bin_width': [1, 0.25],
+            'linreg': True,
+        },
+        'specific_differential_phase': {'variable': 'reflectivity'},
+        'differential_phase': {'variable': 'reflectivity', 'bin_width': [1, 2.0]},
+        'mean_doppler_velocity': {'variable': 'reflectivity', 'bin_width': [1, 0.5]},
+    }
 
     # Call RadTraQ function
     display = radtraq.plotting.plot_self_consistency(ds, variables=var_dict, thresh=thresh)
@@ -73,7 +71,7 @@ This example shows how to create a self-consistency plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.767 seconds)
+   **Total running time of the script:** (0 minutes 0.751 seconds)
 
 
 .. _sphx_glr_download_source_auto_examples_plot_self_consistency.py:

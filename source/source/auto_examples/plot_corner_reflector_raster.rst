@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_source_auto_examples_plot_corner_reflector_raster.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -25,7 +25,7 @@ This example shows how to plot out a corner reflector
 raster scan which also analyzes the data and returns
 the corner reflector location information
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-24
+.. GENERATED FROM PYTHON SOURCE LINES 10-27
 
 
 
@@ -35,41 +35,33 @@ the corner reflector location information
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/runner/work/RadTraQ/RadTraQ/examples/plot_corner_reflector_raster.py:17: DeprecationWarning: act.io.armfiles.read_netcdf will be replaced in version 2.0.0 by act.io.arm.read_arm_netcdf()
-      ds = read_netcdf(radtraq.tests.sample_files.EXAMPLE_RASTER)
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
 
+    import matplotlib.pyplot as plt
+    from act.io.arm import read_arm_netcdf
+    from open_radar_data import DATASETS
 
     import radtraq
-    from act.io.armfiles import read_netcdf
-    import matplotlib.pyplot as plt
 
     # Read in sample data using ACT
-    ds = read_netcdf(radtraq.tests.sample_files.EXAMPLE_RASTER)
+    filename = DATASETS.fetch('sgpkasacrcrrasterC1.a1.20130419.012153.nc')
+    ds = read_arm_netcdf(filename)
 
     # Process and plot raster file
-    data = radtraq.plotting.corner_reflector.plot_cr_raster(ds, target_range=478.,
-                                                            el_limits=[-0.5, 2.5], noplot=False)
+    data = radtraq.plotting.corner_reflector.plot_cr_raster(
+        ds, target_range=478.0, el_limits=[-0.5, 2.5], noplot=False
+    )
     plt.show()
     ds.close()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.996 seconds)
+   **Total running time of the script:** (0 minutes 1.004 seconds)
 
 
 .. _sphx_glr_download_source_auto_examples_plot_corner_reflector_raster.py:

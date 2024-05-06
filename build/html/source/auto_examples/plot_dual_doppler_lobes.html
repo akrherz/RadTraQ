@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dual Doppler Lobe Utility &mdash; RadTraq 0.post1+g20476a5 documentation</title>
+  <title>Dual Doppler Lobe Utility &mdash; RadTraq 0.0.post1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -21,16 +21,16 @@
   
         <script src="../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=90d8b4f8"></script>
-        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/documentation_options.js?v=3469de9b"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
         <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Example on how to calculate and plot cloud masks" href="plot_cloud_mask.html" />
-    <link rel="prev" title="Example on how to calculate and plot cfad" href="plot_cfad.html" /> 
+    <link rel="next" title="Example on how to calculate and plot cfad" href="plot_cfad.html" />
+    <link rel="prev" title="Example on how to plot out a corner reflector raster" href="plot_corner_reflector_raster.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,7 +45,7 @@
             RadTraq
           </a>
               <div class="version">
-                0.post1+g20476a5
+                0.0.post1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -60,8 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">RadTraq Example Gallery</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="plot_corner_reflector_raster.html">Example on how to plot out a corner reflector raster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plot_cfad.html">Example on how to calculate and plot cfad</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Dual Doppler Lobe Utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plot_cfad.html">Example on how to calculate and plot cfad</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_cloud_mask.html">Example on how to calculate and plot cloud masks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_self_consistency.html">Self-Consistency Plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plot_zdr_check.html">ZDR Bias Calculation</a></li>
@@ -101,7 +101,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-source-auto-examples-plot-dual-doppler-lobes-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code</p>
+to download the full example code.</p>
 </div>
 <section class="sphx-glr-example-title" id="dual-doppler-lobe-utility">
 <span id="sphx-glr-source-auto-examples-plot-dual-doppler-lobes-py"></span><h1>Dual Doppler Lobe Utility<a class="headerlink" href="#dual-doppler-lobe-utility" title="Link to this heading"></a></h1>
@@ -116,11 +116,14 @@ ax.add_image(tiler, 8)
 ax.coastlines(‘10m’)</p>
 </dd>
 </dl>
-<img src="../../_images/sphx_glr_plot_dual_doppler_lobes_001.png" srcset="../../_images/sphx_glr_plot_dual_doppler_lobes_001.png" alt="plot dual doppler lobes" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">radtraq</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<img src="../../_images/sphx_glr_plot_dual_doppler_lobes_001.png" srcset="../../_images/sphx_glr_plot_dual_doppler_lobes_001.png" alt="plot dual doppler lobes" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d</span></a> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cullman&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">34.26274649951493</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">86.85874523934974</span><span class="p">},</span>
-     <span class="s1">&#39;Courtland&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">34.658302981847655</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">87.34389529761859</span><span class="p">}}</span>
+<span class="kn">import</span> <span class="nn">radtraq</span>
+
+<a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d</span></a> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Cullman&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">34.26274649951493</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">86.85874523934974</span><span class="p">},</span>
+    <span class="s1">&#39;Courtland&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">34.658302981847655</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">87.34389529761859</span><span class="p">},</span>
+<span class="p">}</span>
 
 <a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">data</span></a> <span class="o">=</span> <span class="n">radtraq</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">calculate_dual_dop_lobes</span><span class="p">(</span><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">d</span></a><span class="p">)</span>
 
@@ -151,14 +154,14 @@ ax.coastlines(‘10m’)</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="plot_cfad.html" class="btn btn-neutral float-left" title="Example on how to calculate and plot cfad" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="plot_cloud_mask.html" class="btn btn-neutral float-right" title="Example on how to calculate and plot cloud masks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="plot_corner_reflector_raster.html" class="btn btn-neutral float-left" title="Example on how to plot out a corner reflector raster" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_cfad.html" class="btn btn-neutral float-right" title="Example on how to calculate and plot cfad" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020, Argonne National Laboratory.</p>
+    <p>&#169; Copyright 2023, Argonne National Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

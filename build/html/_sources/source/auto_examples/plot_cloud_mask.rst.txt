@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_source_auto_examples_plot_cloud_mask.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -23,7 +23,7 @@ Example on how to calculate and plot cloud masks
 
 This example shows how to calculate a cloud mask and plot data
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-31
+.. GENERATED FROM PYTHON SOURCE LINES 8-33
 
 
 
@@ -33,30 +33,21 @@ This example shows how to calculate a cloud mask and plot data
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/runner/work/RadTraQ/RadTraQ/examples/plot_cloud_mask.py:15: DeprecationWarning: act.io.armfiles.read_netcdf will be replaced in version 2.0.0 by act.io.arm.read_arm_netcdf()
-      ds = act.io.armfiles.read_netcdf(radtraq.tests.sample_files.EXAMPLE_KAZR)
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
 
-
-    import radtraq
     import act
     import matplotlib.pyplot as plt
+    from open_radar_data import DATASETS
+
+    import radtraq
 
     # Read in sample data using ACT
-    ds = act.io.armfiles.read_netcdf(radtraq.tests.sample_files.EXAMPLE_KAZR)
+    filename = DATASETS.fetch('sgpkazrgeC1.a1.20190529.000002.cdf')
+    ds = act.io.arm.read_arm_netcdf(filename)
 
     # Resample data for ease of processing
     ds = ds.resample(time='1min').nearest()
@@ -76,7 +67,7 @@ This example shows how to calculate a cloud mask and plot data
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.574 seconds)
+   **Total running time of the script:** (0 minutes 0.463 seconds)
 
 
 .. _sphx_glr_download_source_auto_examples_plot_cloud_mask.py:

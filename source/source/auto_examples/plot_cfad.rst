@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_source_auto_examples_plot_cfad.py>`
-        to download the full example code
+        to download the full example code.
 
 .. rst-class:: sphx-glr-example-title
 
@@ -23,7 +23,7 @@ Example on how to calculate and plot cfad
 
 This example shows how to calculate and plot a cfad
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-23
+.. GENERATED FROM PYTHON SOURCE LINES 8-26
 
 
 
@@ -33,29 +33,21 @@ This example shows how to calculate and plot a cfad
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/runner/work/RadTraQ/RadTraQ/examples/plot_cfad.py:14: DeprecationWarning: act.io.armfiles.read_netcdf will be replaced in version 2.0.0 by act.io.arm.read_arm_netcdf()
-      ds = read_netcdf(radtraq.tests.sample_files.EXAMPLE_KAZR)
 
 
-
-
-
-
-|
 
 .. code-block:: Python
 
 
-    import radtraq
-    from act.io.armfiles import read_netcdf
     import matplotlib.pyplot as plt
+    from act.io.arm import read_arm_netcdf
+    from open_radar_data import DATASETS
+
+    import radtraq
 
     # Read in example data
-    ds = read_netcdf(radtraq.tests.sample_files.EXAMPLE_KAZR)
+    filename = DATASETS.fetch('sgpkazrgeC1.a1.20190529.000002.cdf')
+    ds = read_arm_netcdf(filename)
 
     # Calculate CFAD histogram
     data_array = radtraq.plotting.cfad.calc_cfad(ds, 'reflectivity_copol')
@@ -68,7 +60,7 @@ This example shows how to calculate and plot a cfad
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.818 seconds)
+   **Total running time of the script:** (0 minutes 0.660 seconds)
 
 
 .. _sphx_glr_download_source_auto_examples_plot_cfad.py:
