@@ -89,6 +89,10 @@ code-block:: python
 
       :download:`Download Python source code: plot_dual_doppler_lobes.py <plot_dual_doppler_lobes.py>`
 
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: plot_dual_doppler_lobes.zip <plot_dual_doppler_lobes.zip>`
+
 
 .. only:: html
 
