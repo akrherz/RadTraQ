@@ -22,7 +22,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_corner_reflector_raster_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_corner_reflector_raster.py`
+  :doc:`/source/auto_examples/plot_corner_reflector_raster`
 
 .. raw:: html
 
@@ -39,7 +39,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_dual_doppler_lobes_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_dual_doppler_lobes.py`
+  :doc:`/source/auto_examples/plot_dual_doppler_lobes`
 
 .. raw:: html
 
@@ -56,7 +56,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_cfad_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_cfad.py`
+  :doc:`/source/auto_examples/plot_cfad`
 
 .. raw:: html
 
@@ -73,7 +73,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_cloud_mask_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_cloud_mask.py`
+  :doc:`/source/auto_examples/plot_cloud_mask`
 
 .. raw:: html
 
@@ -90,7 +90,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_self_consistency_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_self_consistency.py`
+  :doc:`/source/auto_examples/plot_self_consistency`
 
 .. raw:: html
 
@@ -107,7 +107,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_zdr_check_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_zdr_check.py`
+  :doc:`/source/auto_examples/plot_zdr_check`
 
 .. raw:: html
 
@@ -124,7 +124,7 @@ Different examples on how to use RadTraq
   .. image:: /source/auto_examples/images/thumb/sphx_glr_plot_mask_vpt_thumb.png
     :alt:
 
-  :ref:`sphx_glr_source_auto_examples_plot_mask_vpt.py`
+  :doc:`/source/auto_examples/plot_mask_vpt`
 
 .. raw:: html
 
